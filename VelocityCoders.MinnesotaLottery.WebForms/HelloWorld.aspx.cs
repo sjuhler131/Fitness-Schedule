@@ -66,7 +66,6 @@ namespace VelocityCoders.FitnessSchedule.WebForms
             #region Enumeration Example
            // this.EnumerationExample(); 
             #endregion
-            //Commit demo!!!
         }
         #region StringExample
         private void StringExample()
