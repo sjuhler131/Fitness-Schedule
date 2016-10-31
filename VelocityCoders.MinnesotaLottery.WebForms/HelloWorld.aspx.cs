@@ -21,7 +21,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms
         {
 
             #region String Example
-            // this.StringExample();
+            //this.StringExample();
             #endregion
             #region ArrayExample
             //this.ArrayExample();
@@ -64,8 +64,9 @@ namespace VelocityCoders.FitnessSchedule.WebForms
             //this.ExtensionExample1();           
             #endregion
             #region Enumeration Example
-           // this.EnumerationExample();
+           // this.EnumerationExample(); 
             #endregion
+            //Commit demo!!!
         }
         #region StringExample
         private void StringExample()

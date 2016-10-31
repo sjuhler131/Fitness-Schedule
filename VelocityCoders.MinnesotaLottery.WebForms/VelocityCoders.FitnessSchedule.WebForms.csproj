@@ -95,6 +95,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminInput.aspx" />
     <Content Include="Admin\EntityTypeDetails.aspx" />
     <Content Include="Admin\EntityTypeList.aspx" />
     <Content Include="Admin\FitnessClassDetails.aspx" />
@@ -104,7 +105,10 @@
     <Content Include="Admin\InstructorList.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
+    <Content Include="App_Themes\Main\Main.css" />
     <Content Include="ExceptionsLab.aspx" />
+    <Content Include="HTMLIntro.aspx" />
+    <Content Include="Images\background-banner.jpg" />
     <Content Include="LabExercises.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -123,11 +127,19 @@
     <Content Include="PolymorphismLab.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Thanks.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminInput.aspx.cs">
+      <DependentUpon>AdminInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminInput.aspx.designer.cs">
+      <DependentUpon>AdminInput.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EntityTypeDetails.aspx.cs">
       <DependentUpon>EntityTypeDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,6 +220,13 @@
     <Compile Include="HelloWorld.aspx.designer.cs">
       <DependentUpon>HelloWorld.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HTMLIntro.aspx.cs">
+      <DependentUpon>HTMLIntro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLIntro.aspx.designer.cs">
+      <DependentUpon>HTMLIntro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LabExercises.aspx.cs">
       <DependentUpon>LabExercises.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -223,6 +242,13 @@
       <DependentUpon>PolymorphismLab.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thanks.aspx.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Thanks.aspx.designer.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
