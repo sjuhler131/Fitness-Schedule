@@ -9,7 +9,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <asp:Label runat="server" ID="lblDisplayMessage" />
+    <asp:Label runat="server" ID="lblStaticContent" />
+        <br />
+        <asp:Label runat="server" ID="lblDynamicContent" />
+        <br />
+        <asp:Label runat="server" ID="lblDisplayMessage" />
+        <br />
     </div>
     </form>
 </body>

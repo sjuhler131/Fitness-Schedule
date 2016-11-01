@@ -22,6 +22,24 @@ namespace VelocityCoders.FitnessSchedule.WebForms {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblStaticContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStaticContent;
+        
+        /// <summary>
+        /// lblDynamicContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDynamicContent;
+        
+        /// <summary>
         /// lblDisplayMessage control.
         /// </summary>
         /// <remarks>

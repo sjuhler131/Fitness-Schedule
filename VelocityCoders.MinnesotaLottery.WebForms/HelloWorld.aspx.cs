@@ -64,9 +64,11 @@ namespace VelocityCoders.FitnessSchedule.WebForms
             //this.ExtensionExample1();           
             #endregion
             #region Enumeration Example
-           // this.EnumerationExample(); 
+            // this.EnumerationExample(); 
             #endregion
-            //Commit demo!!!
+            #region StaticDynamic Example
+            //this.StaticDynamicExample();
+            #endregion
         }
         #region StringExample
         private void StringExample()
@@ -329,9 +331,16 @@ namespace VelocityCoders.FitnessSchedule.WebForms
             lblDisplayMessage.Text = ExecuteEnum.INSERT_ITEM.ToString();
         }
         #endregion
+        #region StaticDynamic Example
+        private void StaticDynamicExample()
+        {
+            lblStaticContent.Text = "Happy Programming!";
+            lblDynamicContent.Text = DateTime.Now.ToShortTimeString();
+        }
+        #endregion
 
-        
-          
-        
+
+
+
     }
 }
