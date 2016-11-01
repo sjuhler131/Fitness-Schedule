@@ -102,6 +102,7 @@
     <Content Include="Admin\FitnessClassList.aspx" />
     <Content Include="Admin\Index.aspx" />
     <Content Include="Admin\InstructorDetails.aspx" />
+    <Content Include="Admin\InstructorForms\InstructorForm.aspx" />
     <Content Include="Admin\InstructorList.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
@@ -109,6 +110,7 @@
     <Content Include="ExceptionsLab.aspx" />
     <Content Include="HTMLIntro.aspx" />
     <Content Include="Images\background-banner.jpg" />
+    <Content Include="Images\header-logo.png" />
     <Content Include="LabExercises.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -181,6 +183,13 @@
     </Compile>
     <Compile Include="Admin\InstructorDetails.aspx.designer.cs">
       <DependentUpon>InstructorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstructorForms\InstructorForm.aspx.cs">
+      <DependentUpon>InstructorForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorForms\InstructorForm.aspx.designer.cs">
+      <DependentUpon>InstructorForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\InstructorList.aspx.cs">
       <DependentUpon>InstructorList.aspx</DependentUpon>
