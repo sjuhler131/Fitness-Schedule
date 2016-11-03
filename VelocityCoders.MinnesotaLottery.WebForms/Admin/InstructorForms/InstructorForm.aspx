@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorForm.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms.InstructorForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorForm.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms.InstructorForm" EnableViewState="false" %>
 
 <!DOCTYPE html>
 
@@ -11,6 +11,8 @@
     <div>
     <img src="/Images/header-logo.png" />
         <br />
+        <br />
+        Current Time is: <asp:Label runat="server" ID="lblPageMessage" EnableViewState="false" Text="Hello World"/>
         <br />
         <table>
                         <tr>
@@ -64,7 +66,10 @@
             </tr>
         </table>
         <br />
-        <asp:Button runat="server" Text="Save"  />
+        <asp:Button runat="server" Text="Save" OnClick="Save_Click"/>
+        <br />
+        <br />
+        <asp:Button runat="server" Text="No Event Handler" />
     </div>
     </form>
 </body>
