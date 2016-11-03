@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorForm.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms.InstructorForm" EnableViewState="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorForm.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms.InstructorForm" EnableViewState="true" %>
 
 <!DOCTYPE html>
 
@@ -12,7 +12,8 @@
     <img src="/Images/header-logo.png" />
         <br />
         <br />
-        Current Time is: <asp:Label runat="server" ID="lblPageMessage" EnableViewState="false" Text="Hello World"/>
+        Form Values Output
+        <p><asp:Label runat="server" ID="lblPageMessage" /></p>
         <br />
         <table>
                         <tr>
@@ -35,12 +36,12 @@
                             <td colspan="2"><hr /></td>
                         </tr>
                         <tr>
-                               <td><label>Date of Hire:</label></td>
-                            <td><asp:TextBox runat="server" ID="txtDateofHire" MaxLength="10" /></td>
+                               <td><label>Hire Date:</label></td>
+                            <td><asp:TextBox runat="server" ID="txtHireDate" MaxLength="10" /></td>
                         </tr>
                         <tr>
-                               <td><label>Date of Termination:</label></td>
-                            <td><asp:TextBox runat="server" ID="txtDateofTermination" MaxLength="10" /></td>
+                               <td><label>Termination Date:</label></td>
+                            <td><asp:TextBox runat="server" ID="txtTermDate" MaxLength="10" /></td>
                         </tr>
                         <tr>
                             <td><label>Employee Type</label></td>
@@ -69,7 +70,7 @@
         <asp:Button runat="server" Text="Save" OnClick="Save_Click"/>
         <br />
         <br />
-        <asp:Button runat="server" Text="No Event Handler" />
+        <div>Copyright 2016 - Velocity Coders</div>
     </div>
     </form>
 </body>

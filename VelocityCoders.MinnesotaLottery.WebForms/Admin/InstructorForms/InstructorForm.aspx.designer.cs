@@ -67,22 +67,22 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms {
         protected global::System.Web.UI.WebControls.TextBox txtBirthDate;
         
         /// <summary>
-        /// txtDateofHire control.
+        /// txtHireDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateofHire;
+        protected global::System.Web.UI.WebControls.TextBox txtHireDate;
         
         /// <summary>
-        /// txtDateofTermination control.
+        /// txtTermDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateofTermination;
+        protected global::System.Web.UI.WebControls.TextBox txtTermDate;
         
         /// <summary>
         /// drpEmployeeType control.
