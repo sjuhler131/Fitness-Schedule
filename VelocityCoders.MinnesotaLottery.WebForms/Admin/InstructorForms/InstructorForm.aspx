@@ -1,4 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorForm.aspx.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms.InstructorForm" EnableViewState="true" %>
+﻿<%@ Page Language="C#" 
+    AutoEventWireup="true"
+    CodeBehind="InstructorForm.aspx.cs" 
+    Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms.InstructorForm" 
+    EnableViewState="true"
+    Theme="Main"
+    %>
 
 <!DOCTYPE html>
 
@@ -7,15 +13,25 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    <img src="/Images/header-logo.png" />
-        <br />
-        <br />
-        Form Values Output
-        <p><asp:Label runat="server" ID="lblPageMessage" /></p>
-        <br />
-        <table>
+    <form id="form1" runat="server">        
+            <div id="Header">
+                <img src="/Images/header-logo.png" />              
+            </div>
+            <div id="Subheader">
+                <div class="Banner">
+                    <h1 class="Banner-Text">Fitness Schedule Administration</h1>
+                    <p>Tool to manage your fitness schedule application.</p>
+                </div>
+            </div> 
+        <div id="Container">
+            <div id="NavigationContainer">
+                <div id="NavigationContainerContent">Left Navigation Placeholder</div>
+            </div>
+            <div id="BodyContainer">
+                <div id="BodyContainerContent">
+                    <div id="InstructorContainer" class="BorderRadiusBottom">
+                        <asp:Label runat="server" ID="lblPageMessage" />
+                                <table>
                         <tr>
                                <td><label>First Name:</label></td>
                             <td><asp:TextBox runat="server" ID="txtFirstName" MaxLength="50" /></td>
@@ -68,10 +84,16 @@
         </table>
         <br />
         <asp:Button runat="server" Text="Save" OnClick="Save_Click"/>
-        <br />
-        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+               
+    <div>
+        <div id="Footer">
         <div>Copyright 2016 - Velocity Coders</div>
-    </div>
+        </div> 
+      </div>   
     </form>
 </body>
 </html>

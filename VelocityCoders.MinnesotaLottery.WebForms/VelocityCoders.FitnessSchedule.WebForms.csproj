@@ -106,6 +106,7 @@
     <Content Include="Admin\InstructorList.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
+    <Content Include="App_Themes\Main\FormControls.css" />
     <Content Include="App_Themes\Main\Main.css" />
     <Content Include="ExceptionsLab.aspx" />
     <Content Include="HTMLIntro.aspx" />
@@ -212,6 +213,7 @@
     <Compile Include="Admin\PersonList.aspx.designer.cs">
       <DependentUpon>PersonList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Enums\Enums.cs" />
     <Compile Include="ExceptionsLab.aspx.cs">
       <DependentUpon>ExceptionsLab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -261,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\Main\Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
