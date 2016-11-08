@@ -111,6 +111,29 @@ ContainerSubheader{
     background-color:#fb9930;
 }
 
+.SubheaderNavigation ul{
+    margin:0;
+    text-align:center;
+}
+
+.SubheaderNavigation li{
+    color: #808080;
+    display: inline;
+    padding: 8px;
+}
+
+.SubheaderNavigation a{
+    color: #666666;
+}
+
+.SmallPadding{
+    background-color: lightgray;
+    padding: 4px;
+}
+
+.TextCenter{
+    text-align: center;
+}
 
 /*.form
     {

@@ -12,9 +12,22 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            
+            //instructorNavigation.CurrentNavigationLink = InstructorNavigation.InstructorForm;
+            this.BindInstructorNavigation();
         }
+
+        #region BIND CONTROLS
+
+        private void BindInstructorNavigation()
+        {
+            instructorNavigation.CurrentNavigationLink = InstructorNavigation.InstructorForm;
+
+            instructorNavigation.InstructorId = 1;
+        }
+
+        #endregion
+
+
         #region EVENT HANDLERS
         protected void Save_Click(object sender, EventArgs e)
         {

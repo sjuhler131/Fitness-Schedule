@@ -6,6 +6,11 @@
     Theme="Main"
     %>
 
+<%@ Register TagPrefix="CustomVelocityCoders"
+             TagName="InstructorNavigation"
+             Src="~/User Controls/InstructorNavigationControl.ascx" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,6 +34,7 @@
             </div>
             <div id="BodyContainer">
                 <div id="BodyContainerContent">
+                    <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation" />
                     <div id="InstructorContainer" class="BorderRadiusBottom">
                         <asp:Label runat="server" ID="lblPageMessage" />
                                 <table>

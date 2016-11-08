@@ -131,6 +131,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Thanks.aspx" />
+    <Content Include="User Controls\InstructorNavigationControl.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -259,6 +260,13 @@
     </Compile>
     <Compile Include="Thanks.aspx.designer.cs">
       <DependentUpon>Thanks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\InstructorNavigationControl.ascx.cs">
+      <DependentUpon>InstructorNavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Controls\InstructorNavigationControl.ascx.designer.cs">
+      <DependentUpon>InstructorNavigationControl.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
