@@ -183,15 +183,15 @@ namespace VelocityCoders.FitnessSchedule.WebForms
         }
         #endregion
         #region PersonExample
-        private void PersonExample()
-        {
-            Person myFriend = new Person("Johnny", "Five", "Male");
+        //private void PersonExample()
+        //{
+        //    Person myFriend = new Person("Johnny", "Five", "Male");
 
 
 
 
-            lblDisplayMessage.Text = myFriend.GetName();
-        }
+        //    lblDisplayMessage.Text = myFriend.GetName();
+        //}
         #endregion
         #region Test
         private void Test()

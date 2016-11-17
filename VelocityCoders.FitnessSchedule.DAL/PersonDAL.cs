@@ -93,5 +93,53 @@ namespace VelocityCoders.FitnessSchedule.DAL
 
             return myObject;
         }
+
+        public static int Save(Person personToSave)
+        {
+            int result = 0;
+            ExecuteEnum queryId = ExecuteEnum.INSERT_ITEM;
+
+            //Notes: Check for valid PersonId - if exists then UPDATE, else INSERT
+            //          10 = INSERT_ITEM
+            //          20 = UPDATE_ITEM
+            if (personToSave.PersonId > 0)
+                queryId = ExecuteEnum.UPDATE_ITEM;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecutePerson", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+
+                    myCommand.Parameters.AddWithValue("@QueryId", queryId);
+
+                    if (personToSave.PersonId > 0)
+                        myCommand.Parameters.AddWithValue("@PersonId", personToSave.PersonId);
+
+                    if (personToSave.FirstName != null)
+                        myCommand.Parameters.AddWithValue("@FirstName", personToSave.FirstName);
+
+                    if (personToSave.LastName != null)
+                        myCommand.Parameters.AddWithValue("@LastName", personToSave.LastName);
+
+                    if (personToSave.DisplayFirstName != null)
+                        myCommand.Parameters.AddWithValue("@DisplayFirstName", personToSave.DisplayFirstName);
+
+                    if (personToSave.BirthDate != DateTime.MinValue)
+                        myCommand.Parameters.AddWithValue("@BirthDate", personToSave.BirthDate.ToShortDateString());
+
+                    //notes: add return output parameter to command object
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
+
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+
+                    //notes: get return value from stored procedure andreturn Id
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
+                }
+                myConnection.Close();
+            }
+            return result;
+        }
     }
 }

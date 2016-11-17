@@ -19,6 +19,7 @@ namespace VelocityCoders.FitnessSchedule.Models
         }
 
         public int InstructorId { get; set; }
+        public int EntityTypeId { get; set; }
         public DateTime HireDate { get; set; }
         public DateTime TermDate { get; set; }
         public string Description { get; set; }

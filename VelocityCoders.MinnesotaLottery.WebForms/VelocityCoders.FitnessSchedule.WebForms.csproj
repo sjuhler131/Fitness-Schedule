@@ -102,8 +102,9 @@
     <Content Include="Admin\FitnessClassList.aspx" />
     <Content Include="Admin\Index.aspx" />
     <Content Include="Admin\InstructorDetails.aspx" />
+    <Content Include="Admin\InstructorForms\ContactInfo.aspx" />
     <Content Include="Admin\InstructorForms\InstructorForm.aspx" />
-    <Content Include="Admin\InstructorList.aspx" />
+    <Content Include="Admin\InstructorForms\InstructorList.aspx" />
     <Content Include="Admin\PersonDetails.aspx" />
     <Content Include="Admin\PersonList.aspx" />
     <Content Include="App_Themes\Main\FormControls.css" />
@@ -117,6 +118,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="MasterPages\Site2Column.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,6 +188,13 @@
     <Compile Include="Admin\InstructorDetails.aspx.designer.cs">
       <DependentUpon>InstructorDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\InstructorForms\ContactInfo.aspx.cs">
+      <DependentUpon>ContactInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstructorForms\ContactInfo.aspx.designer.cs">
+      <DependentUpon>ContactInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\InstructorForms\InstructorForm.aspx.cs">
       <DependentUpon>InstructorForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,11 +202,11 @@
     <Compile Include="Admin\InstructorForms\InstructorForm.aspx.designer.cs">
       <DependentUpon>InstructorForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\InstructorList.aspx.cs">
+    <Compile Include="Admin\InstructorForms\InstructorList.aspx.cs">
       <DependentUpon>InstructorList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InstructorList.aspx.designer.cs">
+    <Compile Include="Admin\InstructorForms\InstructorList.aspx.designer.cs">
       <DependentUpon>InstructorList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\PersonDetails.aspx.cs">
@@ -213,6 +222,9 @@
     </Compile>
     <Compile Include="Admin\PersonList.aspx.designer.cs">
       <DependentUpon>PersonList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="ExceptionsLab.aspx.cs">
@@ -246,6 +258,13 @@
     <Compile Include="LabExercises.aspx.designer.cs">
       <DependentUpon>LabExercises.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterPages\Site2Column.Master.cs">
+      <DependentUpon>Site2Column.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Site2Column.Master.designer.cs">
+      <DependentUpon>Site2Column.Master</DependentUpon>
+    </Compile>
     <Compile Include="PolymorphismLab.aspx.cs">
       <DependentUpon>PolymorphismLab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,6 +297,10 @@
     <ProjectReference Include="..\Uhler.Common\Uhler.Common.csproj">
       <Project>{3e724418-fe9a-4557-b08e-aa58dd5803d2}</Project>
       <Name>Uhler.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VelocityCoders.FitnessSchedule.BLL\VelocityCoders.FitnessSchedule.BLL.csproj">
+      <Project>{a8c91e0a-9e22-4d95-80b0-16c956f745ef}</Project>
+      <Name>VelocityCoders.FitnessSchedule.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\VelocityCoders.FitnessSchedule.DAL\VelocityCoders.FitnessSchedule.DAL.csproj">
       <Project>{cb3d800e-38bf-4e20-9cfc-e2e111b53cb9}</Project>

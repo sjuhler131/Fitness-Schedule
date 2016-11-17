@@ -6,10 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using VelocityCoders.FitnessSchedule.Models;
 using VelocityCoders.FitnessSchedule.Models.Collections;
-using VelocityCoders.FitnessSchedule.DAL;
-using Uhler.Common;
+using VelocityCoders.FitnessSchedule.BLL;
 
-namespace VelocityCoders.FitnessSchedule.WebForms.Admin
+namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
 {
     public partial class InstructorList : System.Web.UI.Page
     {
@@ -17,11 +16,10 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin
         {
             this.BindInstructorList();
         }
+
         private void BindInstructorList()
         {
-            InstructorCollection instructorList = new InstructorCollection();
-
-            instructorList = InstructorDAL.GetCollection();
+            InstructorCollection instructorList = InstructorManager.GetCollection();
 
             rptInstructorList.DataSource = instructorList;
             rptInstructorList.DataBind();

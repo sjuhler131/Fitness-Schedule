@@ -1,5 +1,7 @@
-﻿<%@ Page Language="C#" 
+﻿<%@ Page 
+    Language="C#" 
     AutoEventWireup="true"
+    MasterPageFile="~/MasterPages/Site2Column.Master"
     CodeBehind="InstructorForm.aspx.cs" 
     Inherits="VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms.InstructorForm" 
     EnableViewState="true"
@@ -11,30 +13,14 @@
              Src="~/User Controls/InstructorNavigationControl.ascx" %>
 
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">        
-            <div id="Header">
-                <img src="/Images/header-logo.png" />              
-            </div>
-            <div id="Subheader">
-                <div class="Banner">
-                    <h1 class="Banner-Text">Fitness Schedule Administration</h1>
-                    <p>Tool to manage your fitness schedule application.</p>
-                </div>
-            </div> 
-        <div id="Container">
-            <div id="NavigationContainer">
-                <div id="NavigationContainerContent">Left Navigation Placeholder</div>
-            </div>
-            <div id="BodyContainer">
-                <div id="BodyContainerContent">
-                    <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation" />
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HiddenField runat="server" ID="hidInstructorId" Value="0" />
+    <asp:HiddenField runat="server" ID="hidPersonId" Value="0" />
+    
+    
+    
+    
+    <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation" />
                     <div id="InstructorContainer" class="BorderRadiusBottom">
                         <asp:Label runat="server" ID="lblPageMessage" />
                                 <table>
@@ -68,9 +54,10 @@
                         <tr>
                             <td><label>Employee Type</label></td>
                             <td>
-                                <asp:DropDownList runat="server" ID="drpEmployeeType">
-                                    <asp:ListItem Text="(Select Employee Type)" />
-                                </asp:DropDownList>
+                                <asp:DropDownList   runat="server" 
+                                                    ID="drpEmployeeType"
+                                                    DataTextField="EntityTypeName"
+                                                    DataValueField="EntityTypeId"/>                                   
                             </td>
                         </tr>
                         <tr>
@@ -91,15 +78,6 @@
         <br />
         <asp:Button runat="server" Text="Save" OnClick="Save_Click"/>
                     </div>
-                </div>
-            </div>
-        </div>
+</asp:Content>
+                    
                
-    <div>
-        <div id="Footer">
-        <div>Copyright 2016 - Velocity Coders</div>
-        </div> 
-      </div>   
-    </form>
-</body>
-</html>

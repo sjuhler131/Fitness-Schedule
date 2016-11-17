@@ -9,6 +9,7 @@ namespace VelocityCoders.FitnessSchedule.Models.Enums
     public enum GetEnum
     {
         GET_ITEM = 10,
-        GET_COLLECTION = 20
+        GET_COLLECTION = 20,
+        GET_COLLECTION_BY_NAME =22
     }
 }

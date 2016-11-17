@@ -24,7 +24,7 @@
         /// Page contains Instructor Contract info
         /// </summary>
 
-        ContractInfo,
+        ContactInfo,
        
         /// <summary>
         /// Page contains association between Instructor and Fitness Class

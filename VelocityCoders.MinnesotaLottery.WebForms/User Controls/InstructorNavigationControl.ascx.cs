@@ -46,7 +46,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.User_Controls
                             navigationList.Add(new ListItem
                             {
                                 Text = displayValue,
-                                Value = "/Admin/Instructor/" + item.ToString() + ".aspx?" + instructorIdQueryString,
+                                Value = "/Admin/InstructorForms/" + item.ToString() + ".aspx?" + instructorIdQueryString,
                                 Enabled = true
                             });
                     }
@@ -61,7 +61,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.User_Controls
                         navigationList.Add(new ListItem
                         {
                             Text = item.ToString(),
-                            Value = "/Admin/Instructor/" + item.ToString() + ".aspx?" + instructorIdQueryString,
+                            Value = "/Admin/InstructorForms/" + item.ToString() + ".aspx?" + instructorIdQueryString,
                             Enabled = false
                         });
                     }

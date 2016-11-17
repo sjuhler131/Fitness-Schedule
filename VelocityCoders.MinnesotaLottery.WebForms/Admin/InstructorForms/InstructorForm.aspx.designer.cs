@@ -13,13 +13,22 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms {
     public partial class InstructorForm {
         
         /// <summary>
-        /// form1 control.
+        /// hidInstructorId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.HiddenField hidInstructorId;
+        
+        /// <summary>
+        /// hidPersonId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidPersonId;
         
         /// <summary>
         /// instructorNavigation control.

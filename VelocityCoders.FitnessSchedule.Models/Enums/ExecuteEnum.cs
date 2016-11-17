@@ -8,6 +8,7 @@ namespace VelocityCoders.FitnessSchedule.Models.Enums
 {
     public enum ExecuteEnum
     {
+        None        = 0,
         INSERT_ITEM = 10,
         UPDATE_ITEM = 20,
         DELETE_ITEM = 30

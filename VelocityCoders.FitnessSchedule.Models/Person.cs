@@ -12,11 +12,12 @@ namespace VelocityCoders.FitnessSchedule.Models
     {
       
 
-        public Person(string firstName, string lastName, string gender)
+        public Person(string firstName, string lastName, string gender, DateTime birthDate)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Gender = gender;
+            this.BirthDate = birthDate;
         }
         public Person()
         {
@@ -44,6 +45,7 @@ namespace VelocityCoders.FitnessSchedule.Models
         public string   LastName { get; set; }
         public string   DisplayFirstName { get; set; }
         public string   Gender { get; set; }
+        public DateTime BirthDate { get; set; }
 
 
     }

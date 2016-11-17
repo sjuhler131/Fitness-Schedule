@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VelocityCoders.FitnessSchedule.WebForms.Admin {
+namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms {
     
     
-    public partial class InstructorList {
+    public partial class ContactInfo {
         
         /// <summary>
-        /// form1 control.
+        /// instructorNavigation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// rptInstructorList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptInstructorList;
+        protected global::VelocityCoders.FitnessSchedule.WebForms.User_Controls.InstructorNavigationControl instructorNavigation;
     }
 }

@@ -16,7 +16,7 @@ namespace VelocityCoders.FitnessSchedule.DAL
 {
     public class EntityTypeDAL
     {
-        public static EntityTypeCollection GetCollection()
+        public static EntityTypeCollection GetCollection(EntityEnum entityName)
         {
             EntityTypeCollection tempList = null;
 
@@ -26,7 +26,8 @@ namespace VelocityCoders.FitnessSchedule.DAL
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
 
-                    myCommand.Parameters.AddWithValue("@QueryId", SelectTypeEnum.GetCollection);
+                    myCommand.Parameters.AddWithValue("@QueryId", SelectTypeEnum.GetCollectionByName);
+                    myCommand.Parameters.AddWithValue("@EntityName", entityName.ToString());
 
                     myConnection.Open();
                     using (SqlDataReader myReader = myCommand.ExecuteReader())

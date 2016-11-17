@@ -6,8 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using VelocityCoders.FitnessSchedule.Models;
 using VelocityCoders.FitnessSchedule.Models.Collections;
+using VelocityCoders.FitnessSchedule.Models.Enums;
 using VelocityCoders.FitnessSchedule.DAL;
 using Uhler.Common;
+using VelocityCoders.FitnessSchedule.BLL;
 
 namespace VelocityCoders.FitnessSchedule.WebForms.Admin
 {
@@ -22,7 +24,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin
         {
             EntityTypeCollection entityTypeList = new EntityTypeCollection();
 
-            entityTypeList = EntityTypeDAL.GetCollection();
+            entityTypeList = EntityTypeManager.GetCollection(EntityEnum.EmployeeType);
 
             rptEntityTypeList.DataSource = entityTypeList;
             rptEntityTypeList.DataBind();
