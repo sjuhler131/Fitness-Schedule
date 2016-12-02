@@ -23,9 +23,11 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
         {
             
             this.BindInstructorNavigation();
-            this.BindEmployeeType();
-
-            this.CheckUpdate();
+            if (!IsPostBack)
+            {
+                this.BindEmployeeType();
+                this.CheckUpdate();
+            }
         }
 
 
@@ -34,13 +36,21 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
             if (base.InstructorId > 0)
             {
                 Instructor instructorToUpdate = InstructorManager.GetItem(base.InstructorId);
-                
-                if (instructorToUpdate != null )
+
+                if (instructorToUpdate != null)
                 {
                     this.BindUpdateInfo(instructorToUpdate);
+                    this.SetButtons(true);
+                }
+                else
+                {
+                    this.SetButtons(false);
                 }
             }
-            
+            else
+                this.SetButtons(false);
+
+                       
         }
 
         #region BIND CONTROLS
@@ -49,7 +59,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
         {
             instructorNavigation.CurrentNavigationLink = InstructorNavigation.InstructorForm;
 
-            instructorNavigation.InstructorId = 1;
+            instructorNavigation.InstructorId = base.InstructorId;
         }
         private void BindEmployeeType()
         {
@@ -92,6 +102,21 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
             hidInstructorId.Value = base.InstructorId.ToString();
             hidPersonId.Value = instructorToUpdate.PersonId.ToString();
         }
+        private void SetButtons(bool isUpdate)
+        {
+            if (isUpdate)
+            { 
+                btnSave.Text = "Update Instructor";
+                btnCancel.Visible = true;
+                btnDelete.Visible = true;
+            }
+            else
+            {
+                btnSave.Text = "Add Instructor";
+                btnCancel.Visible = false;
+                btnDelete.Visible = false;
+            }
+        }
             
         #endregion
 
@@ -101,20 +126,30 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
         {
             this.ProcessForm();
         }
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InstructorForm.aspx");
+        }
+
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            this.DeleteInstructor();
+        }
+
         #endregion
         private void ProcessForm()
-        {
-            //StringBuilder formValues = new StringBuilder();
-
+        {           
             string firstName = txtFirstName.Text;
             string preferredFistName = txtPreferredFirstName.Text;
             string lastName = txtLastName.Text;
             string birthDate = txtBirthDate.Text;
             string hireDate = txtHireDate.Text;
             string termDate = txtTermDate.Text;
-            string employeeType = drpEmployeeType.SelectedItem.Text;
+            string employeeType = drpEmployeeType.SelectedItem.Value;
             string gender = drpGender.SelectedItem.Text;
             string notes = txtNotes.Text;
+            
 
             Instructor instructorToSave = new Instructor();
 
@@ -133,33 +168,36 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
             instructorToSave.EntityTypeId = employeeType.ToInt();
             instructorToSave.Description = notes;
 
-
+            //notes: set Id's from hidden fields to determine insert/update
+            instructorToSave.InstructorId = hidInstructorId.Value.ToInt();
+            instructorToSave.PersonId = hidPersonId.Value.ToInt();
+            
 
             // notes: call instructor manager
+            //InstructorManager.Save(instructorToSave);
 
-            InstructorManager.Save(instructorToSave);
+            int someValue = InstructorManager.Save(instructorToSave);
 
-            lblPageMessage.Text = "Save successfully";
+            Response.Redirect("InstructorForm.aspx?InstructorId=" + someValue);
 
-            //formValues.Append("First Name: " + firstName);
-            //formValues.Append("<br />");
-            //formValues.Append("Preferred First Name: " + preferredFistName);
-            //formValues.Append("<br />");
-            //formValues.Append("Last Name: " + lastName);
-            //formValues.Append("<br />");
-            //formValues.Append("Birth Date: " + birthDate);
-            //formValues.Append("<br />");
-            //formValues.Append("Hire Date" + hireDate);
-            //formValues.Append("<br />");
-            //formValues.Append("Term Date" + termDate);
-            //formValues.Append("<br />");
-            //formValues.Append("Employee Type" + employeeType);
-            //formValues.Append("<br />");
-            //formValues.Append("Gender" + gender);
-            //formValues.Append("<br />");
-            //formValues.Append("Notes: " + notes);
+            //lblPageMessage.Text = "Save successfully";           
+        }
+        private void DeleteInstructor()
+        {
+            int instructorId = hidInstructorId.Value.ToInt();
+             
 
-            //lblPageMessage.Text = formValues.ToString();
+            if (instructorId > 0)
+            {
+                if (InstructorManager.Delete(instructorId))
+                {
+                    Response.Redirect("InstructorList.aspx");
+                }
+                else
+                    base.DisplayPageMessage(lblPageMessage, "Error. Delete Failed.");
+            }
+            else
+                base.DisplayPageMessage(lblPageMessage, "Invalid ID. Delete Failed.");
         }
     }
 }

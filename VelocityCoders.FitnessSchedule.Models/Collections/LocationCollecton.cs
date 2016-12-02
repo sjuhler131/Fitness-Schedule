@@ -10,4 +10,5 @@ namespace VelocityCoders.FitnessSchedule.Models.Collections
     class LocationCollecton : BaseCollection<Location>
     {
     }
+
 }

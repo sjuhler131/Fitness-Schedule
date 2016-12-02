@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace VelocityCoders.FitnessSchedule.Models.Collections
 {
-    public class EmailCollection : BaseCollection<Email>
+    public class EmailAddressCollection : BaseCollection<EmailAddress>
     {
     }
 }

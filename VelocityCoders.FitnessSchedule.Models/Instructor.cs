@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using VelocityCoders.FitnessSchedule.Models;
 using Uhler.Common;
+using VelocityCoders.FitnessSchedule.Models.Collections;
+
 
 namespace VelocityCoders.FitnessSchedule.Models
 {
@@ -25,9 +27,17 @@ namespace VelocityCoders.FitnessSchedule.Models
         public string Description { get; set; }
         public DateTime CreateDate { get; set; } 
 
+        //public Instructor()
+        //{
+        //    //notes: default constructor
+        //}
+
+        public EmailAddressCollection Emails { get; set; }
+        
+
         public Instructor()
         {
-            //notes: default constructor
+            this.Emails = new EmailAddressCollection();            
         }
         
         

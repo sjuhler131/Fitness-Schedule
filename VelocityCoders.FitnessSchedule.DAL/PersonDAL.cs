@@ -73,6 +73,25 @@ namespace VelocityCoders.FitnessSchedule.DAL
             return tempItem;
         }
 
+        public static bool Delete(int personId)
+        {
+            int result = 0;
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecutePerson", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", ExecuteEnum.DELETE_ITEM);
+                    myCommand.Parameters.AddWithValue("@PersonId", personId);
+
+                    myConnection.Open();
+                    result = myCommand.ExecuteNonQuery();
+                }
+                myConnection.Close();
+            }
+            return result > 0;
+        }
+
         private static Person FillDataRecord(IDataRecord myDataRecord)
         {
             Person myObject = new Person();
@@ -124,6 +143,9 @@ namespace VelocityCoders.FitnessSchedule.DAL
 
                     if (personToSave.DisplayFirstName != null)
                         myCommand.Parameters.AddWithValue("@DisplayFirstName", personToSave.DisplayFirstName);
+
+                    if (personToSave.Gender != null)
+                        myCommand.Parameters.AddWithValue("@Gender", personToSave.Gender);
 
                     if (personToSave.BirthDate != DateTime.MinValue)
                         myCommand.Parameters.AddWithValue("@BirthDate", personToSave.BirthDate.ToShortDateString());

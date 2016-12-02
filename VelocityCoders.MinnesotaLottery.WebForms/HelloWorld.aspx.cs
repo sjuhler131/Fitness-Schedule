@@ -194,16 +194,16 @@ namespace VelocityCoders.FitnessSchedule.WebForms
         //}
         #endregion
         #region Test
-        private void Test()
-        {
-            Email testEmail = new Email();
+        //private void Test()
+        //{
+        //    EmailAddress testEmail = new EmailAddress();
 
-            testEmail.EmailAddress = "Test123.com";
-            testEmail.EmailId = 1;
-            testEmail.EntityTypeId = 3;
+        //    testEmail.EmailAddress = "Test123.com";
+        //    testEmail.EmailId = 1;
+        //    testEmail.EntityTypeId = 3;
 
-            lblDisplayMessage.Text = "Email Id: " + testEmail.EmailId + "<br>" + "EntityTypeId: " + testEmail.EntityTypeId + "<br>" + "Email Address: " + testEmail.EmailAddress;
-        }
+        //    lblDisplayMessage.Text = "Email Id: " + testEmail.EmailId + "<br>" + "EntityTypeId: " + testEmail.EntityTypeId + "<br>" + "Email Address: " + testEmail.EmailAddress;
+        //}
             #endregion
             #region Collection Example
         private void CollectionExample()

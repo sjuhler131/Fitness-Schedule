@@ -12,9 +12,11 @@ namespace VelocityCoders.FitnessSchedule.Models.Enums
 
         GetCollection = 20,
         
-        GetCollectionByEmployee = 21,
+        GetCollectionByInstructor = 21,
 
         GetCollectionById = 21,
+
+        GetCollectionByEmployee = 21,
 
         GetCollectionByName = 22
     }

@@ -18,5 +18,10 @@ namespace VelocityCoders.FitnessSchedule.BLL
 
                 return returnValue;
         }
+
+        public static bool Delete (int personId)
+        {
+            return PersonDAL.Delete(personId);
+        }
     }
 }

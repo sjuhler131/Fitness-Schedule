@@ -135,6 +135,53 @@ ContainerSubheader{
     text-align: center;
 }
 
+.FloatRight{
+    float:right;
+}
+
+.FloatLeft{
+    float: left;
+}
+
+.ContainerBar{
+    background: #f4f3f1;
+    border-bottom: 1px solid #e6e3e1;
+    border-top: 1px solid #e6e3e1;
+    line-height: 16px;
+    margin: 15px -20px 0;
+    overflow: hidden;
+    padding: 12px 20px;    
+}
+
+.Button{
+    font: bold 11px/30px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    color: #808080;
+    text-shadow: #ffffff 0 1px 0;
+    cursor: pointer;
+
+    border: 1px solid #ccc;
+    padding-top: 4px;
+    padding-bottom:4px;
+    padding-left:10px;
+    padding-right: 10px;
+
+    background: -webkit-linear-gradient(top, #f8f8f9, #e6e6e8);
+    text-decoration: none;
+}
+
+.ButtonRoundedLeft{
+    -moz-border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+.ButtonRoundedRight{
+     -moz-border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+}
+
 /*.form
     {
         text-align:center;

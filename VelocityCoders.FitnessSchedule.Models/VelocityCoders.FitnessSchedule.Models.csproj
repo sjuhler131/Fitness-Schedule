@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collections\EmailCollection.cs" />
+    <Compile Include="Collections\EmailAddressCollection.cs" />
     <Compile Include="Collections\EntityCollection.cs" />
     <Compile Include="Collections\EntityTypeCollection.cs" />
     <Compile Include="Collections\FitnessClassCollection.cs" />
@@ -52,7 +52,7 @@
     <Compile Include="Collections\InstructorFitnessClassCollection.cs" />
     <Compile Include="Collections\LocationCollecton.cs" />
     <Compile Include="Collections\LocationFitnessClassCollecton.cs" />
-    <Compile Include="Email.cs" />
+    <Compile Include="EmailAddress.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EntityType.cs" />
     <Compile Include="Enums\DaysEnum.cs" />

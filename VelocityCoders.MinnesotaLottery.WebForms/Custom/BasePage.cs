@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Uhler.Common.Extensions;
+using System.Web.UI.WebControls;
+
 
 namespace VelocityCoders.FitnessSchedule.WebForms.Custom
 {
@@ -10,7 +12,6 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Custom
     {
         public int GetQueryStringNumber(string queryStringName)
         {            
-
             if (Request.QueryString[queryStringName] == null)
             {
                 return 0;
@@ -27,6 +28,18 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Custom
             {
                 return this.GetQueryStringNumber("InstructorId");
             }
+        }
+
+        public void DisplayPageMessage(Label labelControl, string messageToDisplay)
+        {
+            this.DisplayPageMessage(labelControl, messageToDisplay, false);
+        }
+        public void DisplayPageMessage(Label labelControl, string messageToDisplay, bool isAppend)
+        {
+            if (isAppend)
+                labelControl.Text += messageToDisplay;
+            else
+                labelControl.Text = messageToDisplay;
         }
     }
 }

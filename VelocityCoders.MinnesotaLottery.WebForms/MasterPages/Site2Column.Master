@@ -1,4 +1,7 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2Column.master.cs" Inherits="VelocityCoders.FitnessSchedule.WebForms.MasterPages.Site2Column" %>
+﻿<%@ Master Language="C#" 
+    AutoEventWireup="true" 
+    CodeBehind="Site2Column.master.cs" 
+    Inherits="VelocityCoders.FitnessSchedule.WebForms.MasterPages.Site2Column" %>
 
 <!DOCTYPE html>
 

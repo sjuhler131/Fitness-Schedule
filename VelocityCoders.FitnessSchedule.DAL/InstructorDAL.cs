@@ -73,6 +73,25 @@ namespace VelocityCoders.FitnessSchedule.DAL
             return tempItem;
         }
 
+        public static bool Delete(int instructorId)
+        {
+            int result = 0;
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteInstructor", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", ExecuteEnum.DELETE_ITEM);
+                    myCommand.Parameters.AddWithValue("@InstructorId", instructorId);
+
+                    myConnection.Open();
+                    result = myCommand.ExecuteNonQuery();
+                }
+                myConnection.Close();
+            }
+            return result > 0;
+        }
+
         private static Instructor FillDataRecord(IDataRecord myDataRecord)
         {
             Instructor myObject = new Instructor();
@@ -97,8 +116,8 @@ namespace VelocityCoders.FitnessSchedule.DAL
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EmployeeTypeId")))
                 myObject.EntityTypeId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("EmployeeTypeId"));
 
-            //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("HireDate")))
-            //    myObject.HireDate = myDataRecord.GetDateTime(myDataRecord.GetOrdinal("HireDate"));
+            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("HireDate")))
+                myObject.HireDate = myDataRecord.GetDateTime(myDataRecord.GetOrdinal("HireDate"));
 
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("TermDate")))
                 myObject.TermDate = myDataRecord.GetDateTime(myDataRecord.GetOrdinal("TermDate"));
@@ -130,6 +149,7 @@ namespace VelocityCoders.FitnessSchedule.DAL
                     myCommand.Parameters.AddWithValue("@QueryId", queryId);
                     myCommand.Parameters.AddWithValue("@InstructorId", instructorToSave.InstructorId);
                     myCommand.Parameters.AddWithValue("@PersonId", instructorToSave.PersonId);
+                    myCommand.Parameters.AddWithValue("@EntityTypeId", instructorToSave.EntityTypeId);
 
                     if (instructorToSave.HireDate != DateTime.MinValue)
                         myCommand.Parameters.AddWithValue("@HireDate", instructorToSave.HireDate.ToShortDateString());
@@ -153,6 +173,6 @@ namespace VelocityCoders.FitnessSchedule.DAL
                 myConnection.Close();
             }
             return result;
-        }
+        }      
     }
 }

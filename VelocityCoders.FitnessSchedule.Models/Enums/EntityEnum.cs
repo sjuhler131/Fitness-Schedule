@@ -10,7 +10,7 @@ namespace VelocityCoders.FitnessSchedule.Models.Enums
     {
         None, //Defaults to None.
 
-        EmailType, //Email entity.
+        Email, //Email entity.
 
         FitnessClassCategory, //Fitness Class Category Entity.
 

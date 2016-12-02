@@ -20,6 +20,7 @@
     
     
     
+    
     <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation" />
                     <div id="InstructorContainer" class="BorderRadiusBottom">
                         <asp:Label runat="server" ID="lblPageMessage" />
@@ -75,9 +76,17 @@
                 <td><asp:TextBox runat="server" ID="txtNotes" TextMode="MultiLine" /></td>
             </tr>
         </table>
+        
         <br />
-        <asp:Button runat="server" Text="Save" OnClick="Save_Click"/>
-                    </div>
+         <div class="ContainerBar">
+        <asp:Button runat="server" Text="AddInstructor" ID="btnSave" OnClick="Save_Click"/>
+        &nbsp;&nbsp;
+        <asp:Button runat="server" Text="Cancel" ID="btnCancel" OnClick="Cancel_Click" />
+             <span class="FloatRight">
+                 <asp:Button runat="server" text="Delete" ID="btnDelete" OnClick="Delete_Click" Visible ="false" />
+             </span>
+        </div>
+   </div>                   
 </asp:Content>
                     
                
