@@ -39,7 +39,7 @@ namespace VelocityCoders.FitnessSchedule.WebForms.Admin.InstructorForms
             else
             {
                 //notes: display message to user
-                base.DisplayPageMessage(lblPageMessage, "Delete of emailfailed. Contact administrator.");
+                base.DisplayPageMessage(lblPageMessage, "Delete of email failed. Contact administrator.");
             }
         }
 

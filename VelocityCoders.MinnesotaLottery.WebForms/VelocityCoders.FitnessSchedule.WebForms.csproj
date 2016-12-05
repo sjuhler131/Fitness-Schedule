@@ -109,6 +109,7 @@
     <Content Include="Admin\PersonList.aspx" />
     <Content Include="App_Themes\Main\FormControls.css" />
     <Content Include="App_Themes\Main\Main.css" />
+    <Content Include="Eror.aspx" />
     <Content Include="ExceptionsLab.aspx" />
     <Content Include="HTMLIntro.aspx" />
     <Content Include="Images\background-banner.jpg" />
@@ -227,6 +228,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Eror.aspx.cs">
+      <DependentUpon>Eror.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eror.aspx.designer.cs">
+      <DependentUpon>Eror.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ExceptionsLab.aspx.cs">
       <DependentUpon>ExceptionsLab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
